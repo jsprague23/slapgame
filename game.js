@@ -1,10 +1,11 @@
-var health=100;
+var health=100.00;
 var name=" Rocky ";
 var hits=0;
 function slap(){
     health--
     //alert(health);
     update()
+    damage()
 }
 
 function damage(){
@@ -23,13 +24,22 @@ update();
 function kick() {
     health=health-5
     update()
+    damage()
 }
 
 function anotherRock(){
     health=health-10
     update()
+    damage()
 }
 function brassKnuckles(){
     health=health-100
     update()
+    damage()
+}
+
+function feather(){
+    health=health-0.25
+    update()
+    damage()
 }
