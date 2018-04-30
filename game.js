@@ -1,73 +1,102 @@
-function Robot(name,modifier,description){
+function Item(name,modifier,description){
     this.name=name;
     this.modifier=modifier;
     this.description=description;
+    
 }
 
 var items = {
-    // arm:new Item("armReplace",0.3,"This changes the broken arm to a shiny new one.")
-    mittens: new Item("mittens",0.3,"Reduces the damage from punching")
+    
+    mittens:new Item("Tire Rotation",3,"Get souped up"),
+    oilChange:new Item("oil change",10, "Restores health by 10"),
+    replaceArm:new Item("replace arm", 100, "Completely resotores health"),
 }    
 
 
+var rocky ={
+    health : 100,
+    named: "Robocop",
+    hits: 0,
+    items: [],
+}
 
-var health=Robot(100.00);
-var named=Robot("Robot");
-var hits=Robot(0);
+
+function giveMittens(){
+    rocky.items.push(tireRotation)
+}
+
+function giveOilChange(){
+    rocky.items.push(oilChange)
+}
+
+function giveReplaceArm()
+{
+    rocky.items.push(replaceArm)
+}
+// function addMods(){
+// for (let i = 0; i < items.length; i++) {
+//     const element = items[i];
+
+// // }work on me
+    
+// }
 
 function slap(){
-    health--
+    rocky.health--
     //alert(health);
     update()
     damage()
 }
 
 function damage(){
-    hits++
+    rocky.hits++
 }
 
 function update(){
     //goes to html . gets the element with id 'health' . display health value
-    document.getElementById("health").innerText=health
-    document.getElementById("named").innerText=named
-    document.getElementById("hits").innerText=hits
+    document.getElementById("health").innerText=rocky.health
+    document.getElementById("named").innerText=rocky.named
+    document.getElementById("hits").innerText=rocky.hits
 }
     
 update();
 
 function kick() {
-    health=health-5
+    rocky.health-=5
     update()
     damage()
 }
 
 function anotherRock(){
-    health=health-10
+    rocky.health-=10
     update()
     damage()
 }
 function brassKnuckles(){
-    health=health-50
+    rocky.health-=50
     update()
     damage()
 }
 
 function feather(){
-    health=health-0.25
+    rocky.health-=0.25
     update()
     damage()
 }
-// function armReplace(){
-//     health=health //health regen
-    rocky.health+=rocky.health*0.3 //damage reducer
-// }
 
-function mittens(){
-    health+=health*0.3 //damage reducer
+function tireRotation(){
+    console.log("tireRotation")
+    rocky.health+=3
     update()
 }
 
 function oilChange(){
-    health=health+10
+    rocky.health+=10
+    update()
+}
+
+function replaceArm(){
+    console.log("replaceArm")
+    rocky.health=100
     update()
 }
