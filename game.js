@@ -59,7 +59,7 @@ function feather(){
 }
 // function armReplace(){
 //     health=health //health regen
-//     update()
+    rocky.health+=rocky.health*0.3 //damage reducer
 // }
 
 function mittens(){
