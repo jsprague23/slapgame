@@ -12,7 +12,7 @@ var items = {
     replaceArm:new Item("replace arm", 100, "Completely resotores health"),
 }    
 
-
+// this should be made with a Target constructor
 var rocky ={
     health : 100,
     named: "Robocop",
